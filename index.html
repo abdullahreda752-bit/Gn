@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دليل النجاة بين الكواكب | المريخ ببيانات ناسا الحقيقية</title>
+<meta name="description" content="كرة مريخ تفاعلية مبنية على صور وبيانات ناسا الحقيقية ومهمات الهبوط الفعلية.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Orbitron:wght@500;700;800;900&display=swap">
+<style>
+:root{color-scheme:dark;--bg:#04030a;--ink:#f2ecff;--mute:#a597b8;--rust:#ff6a3d;--gold:#ffb86b;--ice:#6fe3ff;--vio:#8b5cf6;--line:#ffffff1c;--glass:#0f0b1b99;--f:"Tajawal",system-ui,sans-serif;--h:"Orbitron","Tajawal",sans-serif;--m:ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{counter-reset:sec;margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.7;padding-bottom:env(safe-area-inset-bottom,0px);overflow-x:hidden}
+a{color:var(--gold)}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-3}
+.nebula{position:fixed;inset:-10%;z-index:-2;pointer-events:none;background:radial-gradient(40% 35% at 20% 30%,#5b21b655,transparent 70%),radial-gradient(35% 40% at 80% 20%,#ff6a3d33,transparent 70%),radial-gradient(45% 40% at 60% 85%,#0ea5e933,transparent 70%);animation:drift 28s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(3%,-2%) scale(1.12) rotate(4deg)}}
+.grain{position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+#curs{position:fixed;z-index:95;top:-14px;left:-14px;width:28px;height:28px;border-radius:50%;border:1px solid var(--ice);pointer-events:none;opacity:0;transition:opacity .3s;box-shadow:0 0 18px #6fe3ff66;mix-blend-mode:screen}#curs.on{opacity:.8}
+#prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:70;background:linear-gradient(90deg,var(--vio),var(--rust),var(--gold));transform:scaleX(0);transform-origin:0 50%}
+#intro{position:fixed;inset:0;z-index:200;background:radial-gradient(circle at 50% 45%,#150a24,#04030a 70%);display:grid;place-content:center;justify-items:center;gap:16px;transition:opacity 1s .2s,visibility 1s .2s}
+body.ready #intro{opacity:0;visibility:hidden}
+.orb{position:relative;width:130px;height:130px}.orb i{position:absolute;inset:0;border:1px solid #ff6a3d88;border-radius:50%;animation:spin 3s linear infinite;color:#ffb86b}
+.orb i:nth-child(2){inset:14px;border-color:#6fe3ff88;color:#6fe3ff;animation-duration:2s;animation-direction:reverse}.orb i:nth-child(3){inset:28px;border-color:#8b5cf688;color:#8b5cf6;animation-duration:4.5s}
+.orb i::after{content:"";position:absolute;top:-4px;left:50%;width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor}
+.orb u{position:absolute;inset:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffb98a,#c4472b 55%,#4a1a10);box-shadow:0 0 40px #ff6a3d88;animation:pulse 2s ease-in-out infinite}
+.it{font:900 clamp(40px,9vw,84px)/1 var(--h);letter-spacing:.3em;margin-inline-start:.3em;background:linear-gradient(90deg,#ffb86b,#ff6a3d,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.is{font:500 11px var(--h);letter-spacing:.35em;color:var(--mute)}.ib{width:220px;height:2px;background:#ffffff18;overflow:hidden;border-radius:2px}.ib b{display:block;height:100%;width:40%;background:linear-gradient(90deg,transparent,var(--ice),transparent);animation:ld 1.2s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{transform:scale(1.08);filter:brightness(1.25)}}@keyframes ld{from{transform:translateX(-120%)}to{transform:translateX(320%)}}
+nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:6px;padding:calc(10px + env(safe-area-inset-top,0px)) 22px 10px;background:linear-gradient(#04030aee,#04030a88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav b{font:700 15px var(--h);letter-spacing:.12em;margin-inline-end:auto;display:flex;align-items:center;gap:10px}nav b i{font-style:normal;color:var(--rust)}
+.pl{width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffb98a,#c4472b 60%,#4a1a10);box-shadow:0 0 14px #ff6a3d88;animation:pulse 3s infinite}
+nav a{position:relative;color:var(--mute);text-decoration:none;font-size:14px;font-weight:500;padding:6px 12px}nav a::after{content:"";position:absolute;inset-inline:12px;bottom:2px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s}nav a:hover{color:var(--ink)}nav a:hover::after{transform:scaleX(1)}
+button,.btn{font:inherit;color:var(--ink);background:#ffffff0d;border:1px solid var(--line);border-radius:999px;cursor:pointer;padding:7px 15px;font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.25s;backdrop-filter:blur(8px)}
+button:hover,.btn:hover{border-color:var(--rust);box-shadow:0 0 22px #ff6a3d44;transform:translateY(-1px)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--ice);outline-offset:2px}
+button[aria-pressed=true]{background:linear-gradient(135deg,var(--rust),#ff9a3d);border-color:transparent;color:#1a0a05;font-weight:700}
+.btn.pri{background:linear-gradient(135deg,var(--rust),var(--vio));border-color:transparent;font-weight:700;padding:11px 26px;font-size:15px;box-shadow:0 8px 34px #ff6a3d55}
+.eq{display:inline-flex;gap:2px;align-items:flex-end;height:12px}.eq i{width:2px;background:currentColor;height:30%;border-radius:1px}#audio-toggle.on .eq i{animation:eq .9s ease-in-out infinite}.eq i:nth-child(2){animation-delay:.2s!important}.eq i:nth-child(3){animation-delay:.4s!important}@keyframes eq{50%{height:100%}}
+#hero{position:relative;height:calc(100svh - 58px);min-height:600px;overflow:hidden}
+.halo{position:absolute;left:50%;top:50%;width:min(80vh,90vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#ff6a3d2e,#8b5cf61a 45%,transparent 68%);filter:blur(10px);animation:halo 6s ease-in-out infinite;pointer-events:none}@keyframes halo{50%{transform:translate(-50%,-50%) scale(1.12);opacity:.7}}
+canvas{display:block;width:100%;height:100%}#gl{cursor:grab;touch-action:none;position:relative}#gl:active{cursor:grabbing}
+.scan{position:absolute;left:0;right:0;height:120px;top:-120px;background:linear-gradient(transparent,#6fe3ff14,transparent);animation:scan 7s linear infinite;pointer-events:none;z-index:3}@keyframes scan{to{top:100%}}
+.ttl{position:absolute;top:34px;inset-inline-start:30px;z-index:5;max-width:min(52ch,62vw);pointer-events:none}.ttl .btn{pointer-events:auto}
+.kick{font:500 11px var(--h);letter-spacing:.35em;color:var(--ice);display:inline-flex;align-items:center;gap:10px}.kick::before{content:"";width:34px;height:1px;background:var(--ice)}
+.ttl h1{margin:10px 0 0;font-size:clamp(40px,7.2vw,104px);line-height:1.02;font-weight:800;text-shadow:0 4px 40px #000}
+.ttl h1 em{font-style:normal;background:linear-gradient(100deg,var(--gold),var(--rust),var(--vio),var(--gold));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 8s linear infinite}@keyframes flow{to{background-position:-300% 0}}
+.ttl p{margin:14px 0 20px;color:var(--mute);font-size:clamp(14px,1.5vw,18px);max-width:46ch}.cta{display:flex;gap:10px;flex-wrap:wrap}
+.ttl>*{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}.ttl>*:nth-child(2){animation-delay:.15s}.ttl>*:nth-child(3){animation-delay:.3s}.ttl>*:nth-child(4){animation-delay:.45s}
+body:not(.ready) .ttl>*{animation-play-state:paused}@keyframes rise{from{opacity:0;transform:translateY(30px);filter:blur(8px)}}
+#panel{position:absolute;top:26px;inset-inline-end:26px;width:320px;max-height:calc(100% - 52px);overflow:auto;display:flex;flex-direction:column;gap:12px;z-index:5;scrollbar-width:thin}
+.box{position:relative;background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:14px 16px;backdrop-filter:blur(16px);box-shadow:0 10px 40px #0008,inset 0 1px #ffffff14;overflow:hidden}
+.box::before{content:"";position:absolute;top:0;inset-inline:0;height:1px;background:linear-gradient(90deg,transparent,var(--ice),transparent);animation:sh 4s linear infinite}@keyframes sh{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.box h2{margin:0 0 9px;font-size:13px;font-weight:700;color:var(--ice)}
+.row{display:flex;gap:6px;flex-wrap:wrap}.small{font-size:12px;color:var(--mute);margin:8px 0 0}
+.mt{margin:0;font-size:20px;color:var(--gold);unicode-bidi:plaintext}.ty{color:var(--ice);font-size:13px;margin-bottom:6px;font-weight:700}
+dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:6px 0 0;font-size:13px}dt{color:var(--mute)}dd{margin:0;direction:ltr;text-align:end;font-family:var(--m)}
+#co{font:600 13px var(--h);direction:ltr;text-align:right;color:var(--ice)}
+.hud{position:absolute;bottom:20px;inset-inline-end:26px;display:flex;gap:18px;z-index:5;padding:10px 16px;border:1px solid var(--line);border-radius:12px;background:var(--glass);backdrop-filter:blur(12px);direction:ltr}
+.hud div{display:flex;flex-direction:column}.hud span{font:500 9px var(--h);letter-spacing:.3em;color:var(--mute)}.hud b{font:700 14px var(--h);color:var(--ice);min-width:78px}
+#tools{position:absolute;bottom:20px;inset-inline-start:26px;display:flex;gap:8px;z-index:5;flex-wrap:wrap}
+#st{position:absolute;bottom:84px;left:50%;transform:translateX(-50%);font-size:13px;color:var(--ink);background:#04030acc;border:1px solid var(--line);padding:5px 14px;border-radius:99px;max-width:90%;text-align:center;z-index:5}#st.err{background:#8f2a27}#st:empty{display:none}
+.lab{position:absolute;font:700 11px var(--h);letter-spacing:.06em;color:#fff;padding:2px 9px;border:1px solid #6fe3ff55;border-radius:99px;background:#04030acc;pointer-events:none;transform:translate(-50%,-190%);white-space:nowrap;opacity:0;z-index:4}
+.tick{overflow:hidden;white-space:nowrap;direction:ltr;border-block:1px solid var(--line);background:#0006;padding:11px 0;font:500 12px var(--h);letter-spacing:.25em;color:var(--mute)}#tk{display:inline-block;animation:tk 50s linear infinite}@keyframes tk{to{transform:translateX(-50%)}}
+section.pg{counter-increment:sec;padding:84px 24px;max-width:1200px;margin:0 auto}
+section.pg h2{font-size:clamp(28px,4vw,48px);margin:0 0 8px;font-weight:800}section.pg h2::before{content:"0" counter(sec);display:block;font:500 12px var(--h);letter-spacing:.3em;color:var(--rust);margin-bottom:6px}
+section.pg>p{color:var(--mute);margin:0 0 30px;max-width:70ch}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.stat{position:relative;padding:22px 20px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(160deg,#ffffff0a,#ffffff03);overflow:hidden}.stat::after{content:"";position:absolute;inset-inline-end:-40px;top:-40px;width:120px;height:120px;border-radius:50%;background:radial-gradient(#ff6a3d44,transparent 70%)}
+.stat b{display:block;font:800 clamp(34px,4.5vw,52px)/1.1 var(--h);background:linear-gradient(135deg,var(--gold),var(--rust));-webkit-background-clip:text;background-clip:text;color:transparent;direction:ltr;text-align:start}.stat span{color:var(--mute);font-size:14px}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--d,0s) cubic-bezier(.2,.7,.2,1),transform .9s var(--d,0s) cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.card{position:relative;background:linear-gradient(160deg,#ffffff0b,#ffffff03);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:6px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s,opacity .9s var(--d,0s)}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),#ff6a3d2e,transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}.card:hover{border-color:#ff6a3d88;box-shadow:0 20px 60px #0009,0 0 40px #ff6a3d22}.card:hover::before{opacity:1}
+.card h3{margin:0;font:700 20px var(--h);color:var(--gold);unicode-bidi:plaintext;text-align:start}.card button{margin-top:auto;align-self:flex-start}
+.card.in{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.gal a{position:relative;display:block;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--ink);background:#0008;transition:transform .3s,box-shadow .3s}.gal a:hover{transform:translateY(-4px);box-shadow:0 18px 50px #000a,0 0 30px #6fe3ff22}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .6s;background:#1b130f}.gal a:hover img{transform:scale(1.08)}.gal span{display:block;padding:9px 12px;font-size:12px;color:var(--mute);direction:ltr;text-align:left}
+.src{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}.src .card p{margin:0;font-size:14px;color:var(--mute)}
+.note{border-inline-start:2px solid var(--rust);padding:8px 16px;color:var(--mute);font-size:14px;margin-top:26px;max-width:78ch;background:#ff6a3d0d;border-radius:0 8px 8px 0}
+footer{border-top:1px solid var(--line);padding:30px 22px;text-align:center;color:var(--mute);font-size:13px}
+#drawer{position:fixed;z-index:80;top:0;bottom:0;inset-inline-start:0;width:min(480px,100vw);background:linear-gradient(180deg,#0f0a1cf2,#07040dfa);backdrop-filter:blur(24px);border-inline-end:1px solid #ff6a3d55;overflow:auto;transform:translateX(105%);transition:transform .45s cubic-bezier(.2,.8,.2,1);padding:calc(18px + env(safe-area-inset-top,0px)) 20px 30px;box-shadow:0 0 80px #000}#drawer.open{transform:none}
+.dh{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:14px}.dh h2{margin:0;font:800 30px/1.15 var(--h);unicode-bidi:plaintext;background:linear-gradient(90deg,var(--gold),var(--rust));-webkit-background-clip:text;background-clip:text;color:transparent}
+.bd{display:inline-block;padding:4px 14px;border-radius:99px;font-size:13px;font-weight:700;margin-bottom:14px}.bd.ok{background:#12372455;color:#7be3a2;border:1px solid #7be3a244}.bd.bad{background:#40201a66;color:#ff9a80;border:1px solid #ff9a8044}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:9px}.sc{background:#ffffff08;border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column}.sc .k{font-size:11px;color:var(--mute)}.sc .v{font-size:14px;font-weight:500;direction:ltr;text-align:start;word-break:break-word}
+.ds{color:var(--ink);font-size:15px;line-height:1.9;margin:4px 0 0}
+.nb{margin-top:18px;border-inline-start:2px solid var(--rust);padding:2px 14px}.nb h3,.ph3{margin:0 0 7px;font-size:13px;color:var(--ice);font-weight:700}.ph3{margin-top:20px}
+.nb blockquote{margin:0;font-size:14px;line-height:1.75;text-align:left;color:#e6dcf5}.nb cite{display:block;margin-top:7px;font-size:12px;color:var(--mute);text-align:left;font-style:normal}
+.sm{font-size:12px;color:var(--mute)}.pg2{display:grid;grid-template-columns:1fr 1fr;gap:7px}.pg2 img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;cursor:zoom-in;background:#1b130f;display:block;transition:transform .3s,box-shadow .3s}.pg2 img:hover{transform:scale(1.03);box-shadow:0 10px 30px #000a}
+#lb{position:fixed;inset:0;z-index:120;background:#02010add;backdrop-filter:blur(10px);display:grid;place-items:center;padding:20px}#lb[hidden]{display:none}
+#lb figure{margin:0;max-width:min(1000px,94vw);max-height:92vh;overflow:auto}#lb img{max-width:100%;max-height:68vh;display:block;margin:0 auto;border-radius:10px;box-shadow:0 20px 80px #000}
+#lb figcaption{margin-top:12px;font-size:14px;text-align:left}#lb figcaption p{margin:6px 0;color:var(--mute);font-size:13px}
+#lb>button{position:fixed;z-index:121;font-size:22px}#lbx{top:14px;inset-inline-end:14px}#lbp{top:50%;right:14px}#lbn{top:50%;left:14px}
+@media(max-width:820px){nav a:nth-child(n+4){display:none}.hud{display:none}#panel{top:auto;bottom:66px;inset-inline:10px;width:auto;max-height:36%}.ttl{top:18px;max-width:90vw}#hero{min-height:660px}#st{bottom:auto;top:12px}
+ #drawer{top:auto;width:auto;inset-inline:0;max-height:84vh;border-radius:18px 18px 0 0;border-top:1px solid #ff6a3d55;border-inline-end:0;transform:translateY(105%)}#drawer.open{transform:none}.halo{width:110vw}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="intro"><div class="orb"><i></i><i></i><i></i><u></u></div><div class="it">MARS</div><div class="is">SURVIVAL GUIDE · INITIALIZING</div><div class="ib"><b></b></div></div>
+<canvas id="bg"></canvas><div class="nebula"></div><div class="grain"></div><div id="curs"></div><div id="prog"></div>
+<nav><b><span class="pl"></span>Mars<i>·</i>Survival Guide</b><a href="#hero">الكرة</a><a href="#stats">الأرقام</a><a href="#missions">المهمات</a><a href="#photos">الصور</a><a href="#sources">المصادر</a></nav>
+ 
+<section id="hero">
+  <div class="halo"></div><canvas id="gl" aria-label="كرة المريخ ثلاثية الأبعاد من صور ناسا"></canvas><div id="labels"></div><div class="scan"></div>
+  <div class="ttl"><span class="kick">NASA DATA · LIVE</span><h1>المريخ<br><em>كما صوّرته ناسا</em></h1><p>كرة تفاعلية مبنية على بلاطات NASA Mars Trek الحقيقية، ومواقع الهبوط الفعلية لـ14 مهمة، مع صور ونصوص من أرشيف ناسا.</p><div class="cta"><a class="btn pri" href="#missions">ابدأ الاستكشاف</a><a class="btn" href="#sources">مصادر البيانات</a></div></div>
+  <div id="panel">
+    <div class="box"><h2>طبقة الصورة</h2><div class="row" id="layers"></div><p class="small" id="lsrc"></p><p class="small" id="res"></p></div>
+    <div class="box" id="mc"><h2>المهمة المختارة</h2><p class="small" style="margin:0">اضغط على دبوس في الكرة أو اختر مهمة من قسم المهمات.</p></div>
+    <div class="box"><h2>النقطة المحددة</h2><div id="co">—</div></div>
+  </div>
+  <div class="hud"><div><span>ALT</span><b id="hAlt">—</b></div><div><span>LAT</span><b id="hLat">—</b></div><div><span>LON</span><b id="hLon">—</b></div></div>
+  <div id="tools"><button id="auto" aria-pressed="true">دوران تلقائي</button><button id="zi" aria-label="تقريب">+</button><button id="zo" aria-label="تبعيد">−</button><button id="audio-toggle" aria-pressed="false"><span class="eq"><i></i><i></i><i></i></span><span>الصوت: مكتوم</span></button></div>
+  <div id="st">جارٍ الاتصال بخوادم ناسا…</div>
+</section>
+<div class="tick"><div id="tk"></div></div>
+<section class="pg" id="stats">
+  <h2>المريخ في أرقام</h2><p>أرقام أساسية عن الكوكب الأحمر، من بيانات ناسا وقياسات MOLA.</p>
+  <div class="stats"><div class="stat" data-n="14"><b>0</b><span>موقع هبوط موثّق على السطح</span></div><div class="stat" data-n="50"><b>0</b><span>سنة منذ هبوط Viking 1 (1976)</span></div><div class="stat" data-n="21.2" data-dec="1" data-suf=" km"><b>0</b><span>أعلى ارتفاع على الكوكب (MOLA)</span></div><div class="stat" data-n="38" data-suf="%"><b>0</b><span>جاذبية المريخ من جاذبية الأرض</span></div></div>
+</section>
+ 
+<section class="pg" id="missions">
+  <h2>مهمات الهبوط على المريخ</h2>
+  <p>14 موقعاً: 10 مهمات هبطت بنجاح (منها مهمة صينية)، و4 مهمات فُقدت أو تحطمت. اضغط على أي دبوس في الكرة أو على "اعرض على الكرة" لتفتح لوحة تفاصيل الموقع.</p>
+  <div class="grid" id="mgrid"></div>
+</section>
+ 
+<section class="pg" id="photos">
+  <h2 id="gt">صور حقيقية من المهمة</h2>
+  <p id="gs">تُجلب مباشرة من مكتبة صور وفيديو ناسا عند فتح الصفحة.</p>
+  <div class="gal" id="gal"></div>
+</section>
+ 
+<section class="pg" id="sources">
+  <h2>مصادر البيانات</h2>
+  <p>كل ما يظهر على الكرة وفي الصفحة يأتي من مصادر رسمية.</p>
+  <div class="src">
+    <div class="card"><h3>NASA Mars Trek</h3><p>بلاطات الصور العالمية: فسيفساء فايكنج الملونة MDIM 2.1 بدقة نحو 232 م للبكسل، وخريطة الارتفاعات الملونة من مسّاح MOLA بدقة نحو 463 م. الإسقاط متساوي المستطيلات، ونطاق الارتفاع من −8.2 إلى +21.2 كم.</p></div>
+    <div class="card"><h3>NASA Image and Video Library</h3><p>صور المهمات في قسم الصور، تُستعلم مباشرة من images-api.nasa.gov دون مفتاح.</p></div>
+    <div class="card"><h3>مواقع الهبوط</h3><p>إحداثيات وتواريخ وحالة 14 مهمة، جُمعت وقوطعت من قائمة ناسا Mars24 وقوائم ويكيبيديا للهبوط وأوراق علمية (Arvidson وSquyres وVasavada وGolombek). تختلف الإحداثيات بين المصادر بنحو 0.1° إلى 0.5°. موقع Mars Polar Lander وMars 3 تقريبي لأنهما لم يُحدَّدا بدقة.</p></div>
+  </div>
+  <p class="note">لا نعرض في هذه النسخة درجات "أمان الهبوط" ولا نسب الجليد لأنها لم تُحسب بعد من بيانات حقيقية. المرحلة القادمة: اشتقاق الانحدار والخشونة من ارتفاعات MOLA، وطبقة الجليد من بيانات SHARAD. ولم نستخدم Mars Rover Photos API ولا طقس InSight، لأن الأولى متوقفة والثانية مجمّدة منذ 2022.</p>
+</section>
+<footer>الصور: NASA / JPL-Caltech / USGS · مشروع مستقل غير تابع لناسا</footer>
+ 
+<aside id="drawer" aria-label="تفاصيل موقع الهبوط" aria-hidden="true"><div class="dh"><div><h2 id="dt"></h2><div class="ty" id="dsub"></div></div><button id="dx" aria-label="إغلاق">✕</button></div><div id="db"></div></aside>
+<div id="lb" hidden><button id="lbx" aria-label="إغلاق">✕</button><button id="lbp" aria-label="السابق">›</button><button id="lbn" aria-label="التالي">‹</button><figure><img id="lbi" alt=""><figcaption id="lbc"></figcaption></figure></div>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script>
+const $=s=>document.querySelector(s),R2D=180/Math.PI,clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+/* ---------- real data ---------- */
+const MIS=[
+ {n:'Mars 3',desc:"أول مركبة تهبط هبوطاً ناعماً على المريخ (1971)، لكنها أرسلت إشارة لنحو 110 ثوانٍ فقط قبل أن ينقطع الاتصال.",k:'mars 3',q:'mars 3 lander soviet',ty:'مركبة هبوط سوفييتية',ag:'الاتحاد السوفييتي',ok:false,stat:'أول هبوط ناعم، لكن الاتصال انقطع بعد نحو 110 ثوانٍ',site:'موقع تقريبي في النصف الجنوبي',la:-45,lo:-158,d:'1971-12-02'},
+ {n:'Viking 1',desc:"أول مركبة هبوط أمريكية تعمل طويلاً على سطح المريخ. أرسلت أولى الصور الملونة للسطح، وأجرت تجارب بيولوجية تاريخية على التربة.",k:'viking',k2:'viking 1',q:'viking 1 lander mars surface',ty:'مركبة هبوط',ag:'ناسا (NASA)',ok:true,stat:'انتهت المهمة عام 1982',run:'2245 يوماً مريخياً (Sol)',site:'Chryse Planitia',la:22.27,lo:-47.95,d:'1976-07-20'},
+ {n:'Viking 2',desc:"هبطت في سهل يوتوبيا شمالاً، وحلّلت الغلاف الجوي والتربة، وصوّرت سطحاً مغطى بصخور بركانية.",k:'viking',k2:'viking 2',q:'viking 2 lander mars surface',ty:'مركبة هبوط',ag:'ناسا (NASA)',ok:true,stat:'انتهت المهمة في 11 أبريل 1980',run:'1281 يوماً مريخياً (Sol)',site:'Utopia Planitia',la:48.27,lo:134.28,d:'1976-09-03'},
+ {n:'Pathfinder',desc:"أول مركبة جوالة (Sojourner) تعمل على كوكب آخر، وأثبتت إمكانية التجوال والتحليل الجيولوجي المباشر لصخور المريخ.",k:'pathfinder',q:'mars pathfinder sojourner',ty:'مركبة هبوط ومركبة جوالة (Sojourner)',ag:'ناسا (NASA)',ok:true,stat:'انتهت المهمة في 27 سبتمبر 1997',run:'83 يوماً مريخياً (Sol)',site:'Ares Vallis',la:19.13,lo:-33.22,d:'1997-07-04'},
+ {n:'Mars Polar Lander',desc:"فُقد الاتصال بها أثناء الهبوط عام 1999 قرب القطب الجنوبي، ولم يُحدَّد موقعها بدقة.",k:'polar lander',q:'mars polar lander',ty:'مركبة هبوط قطبية',ag:'ناسا (NASA)',ok:false,stat:'فُقد الاتصال قبل الهبوط، والموقع تقريبي',site:'Ultimi Scopuli (قرب القطب الجنوبي)',la:-76.57,lo:165.2,d:'1999-12-03'},
+ {n:'Beagle 2',desc:"مركبة بريطانية هبطت عام 2003 ولم تتصل. حدّد مسبار MRO التابع لناسا موقعها عام 2015.",k:'beagle',q:'beagle 2 lander hirise',ty:'مركبة هبوط بريطانية',ag:'بريطانيا / ESA',ok:false,stat:'هبطت لكنها لم تتصل أبداً',site:'Isidis Planitia',la:11.53,lo:90.43,d:'2003-12-25'},
+ {n:'Spirit',desc:"استكشفت فوهة غوسيف، واكتشفت أدلة قوية على بيئات مائية وينابيع حرارية قديمة على المريخ.",k:'spirit',q:'spirit rover mars',ty:'مركبة جوالة',ag:'ناسا (NASA)',ok:true,stat:'آخر اتصال في 22 مارس 2010',run:'2210 يوماً مريخياً (Sol)',site:'Gusev crater',la:-14.57,lo:175.48,d:'2004-01-04'},
+ {n:'Opportunity',desc:"عملت أكثر من 14 عاماً واكتشفت معدن الهيماتيت الذي يتكوّن عادة في بيئات مائية.",k:'opportunity',q:'opportunity rover mars',ty:'مركبة جوالة',ag:'ناسا (NASA)',ok:true,stat:'آخر اتصال في 10 يونيو 2018',run:'5111 يوماً مريخياً (Sol)',site:'Meridiani Planum',la:-1.95,lo:-5.53,d:'2004-01-25'},
+ {n:'Phoenix',desc:"هبطت قرب القطب الشمالي وأكدت مباشرة وجود جليد مائي تحت التربة السطحية بعد الحفر.",k:'phoenix',q:'phoenix mars lander',ty:'مركبة هبوط قطبية',ag:'ناسا (NASA)',ok:true,stat:'انتهت المهمة في نوفمبر 2008',run:'155 يوماً مريخياً (Sol)',site:'Vastitas Borealis',la:68.22,lo:-125.75,d:'2008-05-25'},
+ {n:'Curiosity',desc:"تستكشف جبل شارب في فوهة غيل، وأثبتت أن الموقع كان يحوي بيئة صالحة للحياة الميكروبية قديماً.",k:'curiosity',q:'curiosity rover mars surface',ty:'مركبة جوالة',ag:'ناسا (NASA)',ok:true,stat:'نشطة',site:'Gale crater',la:-4.59,lo:137.44,d:'2012-08-06'},
+ {n:'Schiaparelli',desc:"مركبة هبوط تجريبية أوروبية تحطمت عام 2016 بعد خطأ في تقدير الارتفاع أثناء الهبوط.",k:'schiaparelli',q:'schiaparelli lander mars hirise',ty:'مركبة هبوط تجريبية',ag:'ESA / روسكوسموس',ok:false,stat:'تحطمت أثناء الهبوط',site:'Meridiani Planum',la:-2.05,lo:-6.21,d:'2016-10-19'},
+ {n:'InSight',desc:"درست الداخل الجيوفيزيائي للمريخ بقياس الزلازل (Marsquakes) وتقدير سمك القشرة والنواة.",k:'insight',q:'insight lander mars',ty:'مركبة هبوط',ag:'ناسا (NASA)',ok:true,stat:'انتهت المهمة في ديسمبر 2022',site:'Elysium Planitia',la:4.5,lo:135.62,d:'2018-11-26'},
+ {n:'Perseverance',desc:"تجمع عينات صخرية من دلتا نهر قديم في فوهة جيزيرو بحثاً عن آثار حياة ميكروبية سابقة، ومعها المروحية Ingenuity.",k:'perseverance',q:'perseverance rover mars jezero',ty:'مركبة جوالة (ومعها مروحية Ingenuity)',ag:'ناسا (NASA)',ok:true,stat:'نشطة',site:'Jezero crater',la:18.44,lo:77.45,d:'2021-02-18'},
+ {n:'Zhurong',desc:"مهمة وكالة الفضاء الصينية في سهل يوتوبيا، ومعها رادار يخترق التربة لكشف طبقات تحت السطح.",k:'zhurong',q:'zhurong tianwen-1 mars',ty:'مركبة جوالة',ag:'الصين (CNSA)',ok:true,stat:'خاملة منذ مايو 2022',site:'Utopia Planitia',la:25.1,lo:109.9,d:'2021-05-14'}
+];
+ 
+const TB='https://trek.nasa.gov/tiles/Mars/EQ/';
+const LY={viking:{id:'Mars_Viking_MDIM21_ClrMosaic_global_232m',zmax:7,name:'فايكنج الملونة',src:'Viking MDIM 2.1 · NASA/JPL/USGS · نحو 232 م للبكسل'},
+          mola:{id:'Mars_MGS_MOLA_ClrShade_merge_global_463m',zmax:6,name:'ارتفاعات MOLA',src:'MOLA ملونة ومظلّلة · بنفسجي = منخفض (−8.2 كم) ← أبيض = مرتفع (+21.2 كم)'}};
+function loadTiles(L,z,prog){return new Promise(res=>{const cols=2<<z,rows=1<<z,tot=cols*rows,c=document.createElement('canvas');c.width=cols*256;c.height=rows*256;const x=c.getContext('2d');let ok=0,bad=0;
+  const fin=()=>{const n=ok+bad;if(n===tot)res({c,bad,tot});else prog(n,tot)};
+  for(let r=0;r<rows;r++)for(let q=0;q<cols;q++){const im=new Image();im.crossOrigin='anonymous';im.onload=()=>{x.drawImage(im,q*256,r*256);ok++;fin()};im.onerror=()=>{bad++;fin()};
+   im.src=`${TB}${L.id}/1.0.0/default/default028mm/${z}/${r}/${q}.jpg`}})}
+ 
+/* ---------- scene ---------- */
+const cvs=$('#gl'),ren=new THREE.WebGLRenderer({canvas:cvs,antialias:true,alpha:true});ren.setPixelRatio(Math.min(devicePixelRatio,2));ren.outputEncoding=THREE.sRGBEncoding;
+const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(40,1,.01,200);let D=9,Dt=2.9,intro=true;cam.position.z=D;
+const sun=new THREE.DirectionalLight(0xfff2e6,1.1);sun.position.set(5,2,6);scene.add(sun,new THREE.AmbientLight(0xffffff,.85));
+const G=new THREE.Group();scene.add(G);G.rotation.y=-2.2;
+const mat=new THREE.MeshStandardMaterial({color:0x5a3a2c,roughness:1,metalness:0});
+const globe=new THREE.Mesh(new THREE.SphereGeometry(1,128,64),mat);G.add(globe);
+scene.add(new THREE.Mesh(new THREE.SphereGeometry(1.045,64,32),new THREE.ShaderMaterial({transparent:true,side:THREE.BackSide,blending:THREE.AdditiveBlending,depthWrite:false,
+ vertexShader:'varying vec3 n;void main(){n=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+ fragmentShader:'varying vec3 n;void main(){float i=pow(.68-dot(n,vec3(0,0,1.)),3.);gl_FragColor=vec4(.95,.55,.4,1.)*i*1.4;}'})));
+const stars=(()=>{const p=[];for(let i=0;i<1800;i++){const u=Math.random()*2-1,t=Math.random()*6.283,r=Math.sqrt(1-u*u);p.push(60*r*Math.cos(t),60*u,60*r*Math.sin(t))}
+ const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));return new THREE.Points(g,new THREE.PointsMaterial({size:.18,color:0xffffff}))})();scene.add(stars);
+const V=(la,lo,r=1)=>{const p=(lo+180)/R2D,t=(90-la)/R2D;return new THREE.Vector3(-r*Math.cos(p)*Math.sin(t),r*Math.cos(t),r*Math.sin(p)*Math.sin(t))};
+const pins=[],pulses=[];
+MIS.forEach((m,i)=>{const o=new THREE.Mesh(new THREE.SphereGeometry(.009,12,8),new THREE.MeshBasicMaterial({color:m.ok===false?0xff7a59:0x7fd8ff}));o.position.copy(V(m.la,m.lo,1.004));G.add(o);
+ const pr=new THREE.Mesh(new THREE.RingGeometry(.008,.011,32),new THREE.MeshBasicMaterial({color:m.ok===false?0xff7a59:0x7fd8ff,transparent:true,side:THREE.DoubleSide,depthWrite:false}));pr.position.copy(o.position);pr.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,1),o.position.clone().normalize());G.add(pr);pulses.push(pr);
+ const d=document.createElement('div');d.className='lab';d.textContent=m.n;$('#labels').appendChild(d);pins.push({o,d,i})});
+const ring=new THREE.Mesh(new THREE.RingGeometry(.016,.021,32),new THREE.MeshBasicMaterial({color:0xffffff,side:THREE.DoubleSide}));ring.visible=false;G.add(ring);
+const setRing=(la,lo)=>{ring.visible=true;ring.position.copy(V(la,lo,1.006));ring.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,1),ring.position.clone().normalize())};
+ 
+/* ---------- space FX: moons, orbits, dust ---------- */
+const moons=[['Phobos',.022,1.75,.8,.12,0x9a8f86],['Deimos',.015,2.35,.33,-.18,0xb5aba0]].map(([n,r,a,s,tilt,col])=>{const o=new THREE.Mesh(new THREE.SphereGeometry(r,20,14),new THREE.MeshStandardMaterial({color:col,roughness:1})),pts=[];
+ for(let i=0;i<=128;i++){const t=i/128*6.2832;pts.push(new THREE.Vector3(Math.cos(t)*a,0,Math.sin(t)*a))}
+ const ln=new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:0xff9a62,transparent:true,opacity:.22})),grp=new THREE.Group();grp.rotation.x=tilt;grp.add(ln,o);scene.add(grp);return{o,a,s,p:Math.random()*6}});
+const dust=(()=>{const p=[];for(let i=0;i<700;i++){const u=Math.random()*2-1,t=Math.random()*6.283,r=Math.sqrt(1-u*u),R=1.15+Math.random()*1.4;p.push(R*r*Math.cos(t),R*u*.55,R*r*Math.sin(t))}
+ const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));return new THREE.Points(g,new THREE.PointsMaterial({size:.012,color:0xffb98a,transparent:true,opacity:.55,blending:THREE.AdditiveBlending,depthWrite:false}))})();scene.add(dust);
+let hudT=0;
+/* ---------- real imagery ---------- */
+const st=(t,e)=>{$('#st').textContent=t;$('#st').className=e?'err':''},cache={};let cur='viking';
+const maxZ=ren.capabilities.maxTextureSize>=4096?3:2;
+function apply(t){mat.map=t;mat.color.set(0xffffff);mat.needsUpdate=true;setTimeout(()=>document.body.classList.add('ready'),Math.max(0,2400-performance.now()))}
+async function showLayer(k){cur=k;lodSig='';[...$('#layers').children].forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k));$('#lsrc').textContent=LY[k].src;
+ if(cache[k]){apply(cache[k]);st('');return}
+ for(let z=2;z<=maxZ;z++){const r=await loadTiles(LY[k],z,(n,t)=>st(`جارٍ تحميل ${LY[k].name} من ناسا · ${n}/${t}`));
+  if(r.bad>r.tot*.4){st(`تعذّر تحميل بلاطات ناسا (${r.bad}/${r.tot}). تحقق من الإنترنت، وافتح الصفحة من استضافة أو خادم محلي بدل فتح الملف مباشرة.`,true);return}
+  const t=new THREE.CanvasTexture(r.c);t.encoding=THREE.sRGBEncoding;t.anisotropy=8;cache[k]=t;if(cur===k)apply(t)}
+ if(cur===k)st('')}
+Object.entries(LY).forEach(([k,L])=>{const b=document.createElement('button');b.textContent=L.name;b.dataset.k=k;b.onclick=()=>showLayer(k);$('#layers').appendChild(b)});
+ 
+/* ---------- missions + live gallery ---------- */
+const fmtC=(la,lo)=>`${Math.abs(la).toFixed(1)}°${la>=0?'N':'S'} ${Math.abs(lo).toFixed(1)}°${lo>=0?'E':'W'}`;
+function info(m,tag){const f=document.createDocumentFragment(),h=document.createElement(tag);h.className='mt';h.textContent=m.n;const t=document.createElement('div');t.className='ty';t.textContent=m.ty;
+ const dl=document.createElement('dl');[['الجهة',m.ag],['الموقع',m.site],['الإحداثيات',fmtC(m.la,m.lo)],['تاريخ الهبوط',m.d],['الحالة',m.stat]].forEach(([a,b])=>{const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=a;dd.textContent=b;if(/[\u0600-\u06FF]/.test(b))dd.style.direction='rtl';dl.append(dt,dd)});
+ f.append(h,t,dl);return f}
+MIS.forEach((m,i)=>{const c=document.createElement('div');c.className='card rv';c.style.setProperty('--d',(i%4)*.08+'s');c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;c.style.setProperty('--mx',px*100+'%');c.style.setProperty('--my',py*100+'%');c.style.setProperty('--rx',((.5-py)*8)+'deg');c.style.setProperty('--ry',((px-.5)*8)+'deg')});c.addEventListener('pointerleave',()=>{c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')});c.appendChild(info(m,'h3'));const b=document.createElement('button');b.textContent='اعرض على الكرة';b.onclick=()=>{pick(i);$('#hero').scrollIntoView()};c.appendChild(b);$('#mgrid').appendChild(c)});
+const photoCache=new Map(),el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e},clean=h=>new DOMParser().parseFromString(h||'','text/html').body.textContent.trim();
+const score=(i,m)=>{const d=i.data[0],t=(d.title||'').toLowerCase(),all=t+' '+(d.description||'').toLowerCase();return (m.k2&&t.includes(m.k2)?3:0)+(t.includes(m.k)?2:0)+(all.includes(m.k)&&all.includes('mars')?1:0)};
+function getPhotos(m){if(photoCache.has(m.n))return photoCache.get(m.n);
+ const p=(async()=>{const r=await fetch('https://images-api.nasa.gov/search?'+new URLSearchParams({q:m.q,media_type:'image',page_size:100})),j=await r.json();
+  return (j.collection.items||[]).filter(i=>i.links&&i.data&&score(i,m)>0).sort((a,b)=>score(b,m)-score(a,m)).slice(0,16)})();
+ photoCache.set(m.n,p);p.catch(()=>photoCache.delete(m.n));return p}
+let gseq=0,lbList=[],lbIdx=0,curM=null;
+async function gallery(m){const my=++gseq,g=$('#gal');g.replaceChildren();$('#gt').textContent='صور حقيقية: '+m.n;$('#gs').textContent='جارٍ جلب الصور من مكتبة ناسا…';
+ try{const it=await getPhotos(m);if(my!==gseq)return;
+  if(!it.length){$('#gs').textContent='لم يتم العثور على صور مطابقة في مكتبة ناسا.';return}
+  $('#gs').textContent='من NASA Image and Video Library. اضغط على أي صورة لعرضها بحجم أكبر مع وصف ناسا لها.';
+  it.forEach((i,k)=>{const d=i.data[0],a=el('a');a.href='https://images.nasa.gov/details/'+encodeURIComponent(d.nasa_id);a.onclick=e=>{e.preventDefault();lbList=it;openLb(k)};
+   const im=el('img');im.loading='lazy';im.alt=d.title||'';im.src=i.links[0].href;a.append(im,el('span',0,((d.date_created||'').slice(0,10)+' · '+(d.title||'')).slice(0,110)));g.appendChild(a)})
+ }catch(e){if(my===gseq)$('#gs').textContent='تعذّر الاتصال بمكتبة صور ناسا. تحقق من الإنترنت.'}}
+/* ---------- site drawer + lightbox ---------- */
+const dr=$('#drawer');
+function closeDrawer(){dr.classList.remove('open');dr.setAttribute('aria-hidden','true');curM=null}
+async function openDrawer(m){curM=m;dr.classList.add('open');dr.setAttribute('aria-hidden','false');$('#dt').textContent=m.n;$('#dsub').textContent=m.ty;
+ const b=$('#db');b.replaceChildren();b.appendChild(el('span','bd '+(m.ok?'ok':'bad'),m.stat));
+ const g=el('div','sg');[['تاريخ الهبوط',m.d],['الموقع',m.site],['الإحداثيات',fmtC(m.la,m.lo)],['الجهة',m.ag]].concat(m.run?[['مدة التشغيل',m.run]]:[]).forEach(([a,v])=>{const c=el('div','sc'),vv=el('b','v',v);if(/[\u0600-\u06FF]/.test(v))vv.style.direction='rtl';c.append(el('span','k',a),vv);g.appendChild(c)});b.appendChild(g);if(m.desc){b.appendChild(el('h3','ph3','نظرة عامة'));b.appendChild(el('p','ds',m.desc))}
+ const nb=el('div','nb');nb.appendChild(el('h3',0,'من أرشيف ناسا'));const np=el('p','sm','جارٍ جلب النص والصور…');nb.appendChild(np);b.appendChild(nb);
+ const ph=el('div','pg2');b.append(el('h3','ph3','صور حقيقية'),ph);
+ try{const it=await getPhotos(m);if(curM!==m)return;
+  if(!it.length){np.textContent='لا توجد مواد مطابقة في مكتبة صور ناسا لهذا الموقع.';return}
+  const best=it.map(i=>[clean(i.data[0].description),i]).sort((x,y)=>y[0].length-x[0].length)[0];
+  nb.replaceChildren(el('h3',0,'من أرشيف ناسا (بالإنجليزية)'));
+  if(best[0].length>40){const q=el('blockquote',0,best[0].length>900?best[0].slice(0,900)+'…':best[0]);q.dir='ltr';const bd=best[1].data[0],ci=el('cite',0,(bd.title||'')+' · '+(bd.date_created||'').slice(0,10));ci.dir='ltr';nb.append(q,ci)}
+  else nb.appendChild(el('p','sm','لا يوجد نص وصفي لهذه الصور، لكن الصور أدناه من أرشيف ناسا.'));
+  lbList=it;it.forEach((i,k)=>{const im=el('img');im.loading='lazy';im.alt=i.data[0].title||'';im.src=i.links[0].href;im.onclick=()=>openLb(k);ph.appendChild(im)});
+ }catch(e){if(curM===m)np.textContent='تعذّر الاتصال بمكتبة صور ناسا. تحقق من الإنترنت.'}}
+async function bigUrl(i){try{const a=await (await fetch(i.href.replace('http://','https://'))).json(),f=a.filter(u=>/\.(jpe?g|png)$/i.test(u)),q=t=>f.find(u=>u.includes(t));const u=q('~large.')||q('~medium.')||q('~orig.');return u?u.replace('http://','https://'):i.links[0].href}catch(e){return i.links[0].href}}
+async function openLb(k){lbIdx=(k+lbList.length)%lbList.length;const i=lbList[lbIdx],d=i.data[0];$('#lb').hidden=false;$('#lbi').src=i.links[0].href;
+ const cap=$('#lbc');cap.replaceChildren();cap.dir='ltr';cap.append(el('b',0,d.title||''),el('span','sm',(d.date_created||'').slice(0,10)+(d.center?' · '+d.center:'')),el('p',0,clean(d.description).slice(0,1200)));
+ const a=el('a',0,'Open on nasa.gov');a.href='https://images.nasa.gov/details/'+encodeURIComponent(d.nasa_id);a.target='_blank';a.rel='noopener';cap.appendChild(a);
+ const u=await bigUrl(i);if(lbList[lbIdx]===i)$('#lbi').src=u}
+$('#dx').onclick=closeDrawer;$('#lbx').onclick=()=>$('#lb').hidden=true;$('#lbp').onclick=()=>openLb(lbIdx-1);$('#lbn').onclick=()=>openLb(lbIdx+1);
+$('#lb').addEventListener('click',e=>{if(e.target.id==='lb')$('#lb').hidden=true});
+addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('#lb').hidden)$('#lb').hidden=true;else closeDrawer()}if(!$('#lb').hidden){if(e.key==='ArrowLeft')openLb(lbIdx+1);if(e.key==='ArrowRight')openLb(lbIdx-1)}});
+ 
+/* ---------- dynamic detail (LOD): finer NASA tiles for the region being viewed ---------- */
+const turl=(L,z,r,q)=>`${TB}${L.id}/1.0.0/default/default028mm/${z}/${r}/${q}.jpg`,mpp=z=>Math.round(21338000/((2<<z)*256));
+const patch=new THREE.Mesh(new THREE.BufferGeometry(),new THREE.MeshStandardMaterial({roughness:1,metalness:0,transparent:true,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2}));patch.visible=false;G.add(patch);
+const imgCache=new Map();let lodKey='',lodSeq=0,lastMove=0,lastSig='',lodSig='x';
+function getTile(u){let p=imgCache.get(u);if(!p){p=new Promise(r=>{const im=new Image();im.crossOrigin='anonymous';im.onload=()=>r(im);im.onerror=()=>r(null);im.src=u});imgCache.set(u,p);if(imgCache.size>500)imgCache.delete(imgCache.keys().next().value)}return p}
+async function lod(){
+ const baseTxt=`دقة العرض الحالية ≈ ${mpp(maxZ)} م/بكسل عند خط الاستواء`;
+ if(D>2.2||!cache[cur]){patch.visible=false;lodKey='';$('#res').textContent=cache[cur]?baseTxt:'';return}
+ const L=LY[cur],pv=new THREE.Vector3(0,0,1).applyQuaternion(G.quaternion.clone().invert()),la=Math.asin(clamp(pv.y,-1,1))*R2D,lo=Math.atan2(pv.z,-pv.x)*R2D-180;
+ const dist=D-1,tn=Math.tan(20/R2D),dpr=Math.min(devicePixelRatio,2),ppd=(cvs.clientHeight/2)/(tn*dist)*Math.PI/180*dpr;
+ const half=Math.min(80,dist*tn*Math.max(1,cam.aspect)*R2D*1.3);
+ let z=Math.ceil(Math.log2(ppd/1.422));z=Math.min(z,Math.floor(Math.log2(720/(half*1.1))),L.zmax);
+ if(z<=maxZ){patch.visible=false;lodKey='';$('#res').textContent=baseTxt;return}
+ const cols=2<<z,rows=1<<z,ts=360/cols,x0=Math.floor((lo+180)/ts)-4,y0=clamp(Math.floor((90-la)/ts)-4,0,rows-8),key=`${cur}|${z}|${x0}|${y0}`;
+ if(key===lodKey)return;lodKey=key;const my=++lodSeq;
+ if(!$('#st').textContent)st('جارٍ تحسين الدقة من ناسا…');
+ const c=document.createElement('canvas');c.width=c.height=2048;const x=c.getContext('2d'),jobs=[];
+ for(let r=0;r<8;r++)for(let q=0;q<8;q++)jobs.push(getTile(turl(L,z,y0+r,((x0+q)%cols+cols)%cols)).then(im=>{if(im){x.drawImage(im,q*256,r*256);return 1}return 0}));
+ const ok=(await Promise.all(jobs)).reduce((a,b)=>a+b,0);if(my!==lodSeq)return;
+ if($('#st').textContent.startsWith('جارٍ تحسين'))st('');
+ if(ok<32){L.zmax=z-1;lodKey='';lodSig='';return}
+ const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;t.anisotropy=8;if(patch.material.map)patch.material.map.dispose();patch.material.map=t;patch.material.needsUpdate=true;
+ patch.geometry.dispose();patch.geometry=new THREE.SphereGeometry(1.0006,48,48,x0*ts/R2D,8*ts/R2D,y0*ts/R2D,8*ts/R2D);patch.visible=true;
+ $('#res').textContent=`دقة العرض الحالية ≈ ${mpp(z)} م/بكسل (مستوى ${z} من ناسا)`}
+ 
+/* ---------- controls ---------- */
+let vx=0,vy=0,auto=true,fly=null,down=null,pinch=0;const ptr=new Map(),Dmin=1.06,Dmax=7;
+function pick(i){const m=MIS[i],v=V(m.la,m.lo);let ry=Math.atan2(-v.x,v.z);const c=G.rotation.y;ry=c+Math.atan2(Math.sin(ry-c),Math.cos(ry-c));
+ fly={ry,rx:m.la/R2D};Dt=1.7;auto=false;$('#auto').setAttribute('aria-pressed',false);
+ const mc=$('#mc'),h=document.createElement('h2');h.textContent='المهمة المختارة';mc.replaceChildren(h,info(m,'h3'));
+ const a=document.createElement('a');a.href='#photos';a.textContent='صور المهمة الحقيقية ↓';a.className='small';a.style.display='block';mc.appendChild(a);
+ setRing(m.la,m.lo);$('#co').textContent=fmtC(m.la,m.lo);gallery(m);openDrawer(m)}
+cvs.addEventListener('pointerdown',e=>{cvs.setPointerCapture(e.pointerId);ptr.set(e.pointerId,{x:e.clientX,y:e.clientY});down={x:e.clientX,y:e.clientY,m:0};fly=null;vx=vy=0;
+ if(ptr.size==2){const [a,b]=[...ptr.values()];pinch=Math.hypot(a.x-b.x,a.y-b.y)}});
+cvs.addEventListener('pointermove',e=>{const p=ptr.get(e.pointerId);if(!p)return;const dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;
+ if(ptr.size==2){const [a,b]=[...ptr.values()],d=Math.hypot(a.x-b.x,a.y-b.y);Dt=clamp(Dt*pinch/d,Dmin,Dmax);pinch=d;if(down)down.m=99;return}
+ if(down){down.m=Math.max(down.m,Math.hypot(e.clientX-down.x,e.clientY-down.y));
+  if(down.m>4){const k=.0042*(D-.9)/2.5;vy=dx*k;vx=dy*k;G.rotation.y+=vy;G.rotation.x=clamp(G.rotation.x+vx,-1.45,1.45)}}});
+cvs.addEventListener('pointerup',e=>{ptr.delete(e.pointerId);
+ if(down&&down.m<=4&&!ptr.size){const r=cvs.getBoundingClientRect(),rc=new THREE.Raycaster();rc.setFromCamera(new THREE.Vector2((e.clientX-r.left)/r.width*2-1,-((e.clientY-r.top)/r.height)*2+1),cam);
+  const h=rc.intersectObject(globe)[0];if(h){const p=globe.worldToLocal(h.point.clone()).normalize(),la=Math.asin(p.y)*R2D;let lo=Math.atan2(p.z,-p.x)*R2D-180;if(lo<-180)lo+=360;
+   $('#co').textContent=fmtC(la,lo);setRing(la,lo);
+   let best=-1,bd=1e9;MIS.forEach((m,i)=>{const d=V(m.la,m.lo).distanceTo(p);if(d<bd){bd=d;best=i}});if(bd<.018*D)pick(best)}}
+ if(!ptr.size)down=null});
+cvs.addEventListener('wheel',e=>{e.preventDefault();Dt=clamp(Dt*(e.deltaY>0?1.12:.89),Dmin,Dmax)},{passive:false});
+$('#zi').onclick=()=>Dt=clamp(Dt*.7,Dmin,Dmax);$('#zo').onclick=()=>Dt=clamp(Dt/.7,Dmin,Dmax);
+$('#auto').onclick=e=>{auto=!auto;e.target.setAttribute('aria-pressed',auto)};
+function resize(){const w=cvs.clientWidth,h=cvs.clientHeight;ren.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}addEventListener('resize',resize);
+ 
+const tmp=new THREE.Vector3();let t0=performance.now();
+function frame(now){requestAnimationFrame(frame);const dt=Math.min(.05,(now-t0)/1000);t0=now;D+=(Dt-D)*(intro?.035:.12);if(intro){G.rotation.y+=dt*.45*clamp((D-Dt)/4,.05,1);if(Math.abs(D-Dt)<.03)intro=false}cam.position.z=D;
+ const sg=D.toFixed(3)+G.rotation.x.toFixed(3)+G.rotation.y.toFixed(3);if(sg!==lastSig){lastSig=sg;lastMove=now}else if(lodSig!==sg&&now-lastMove>350){lodSig=sg;lod()}
+ if(fly){G.rotation.y+=(fly.ry-G.rotation.y)*.08;G.rotation.x+=(fly.rx-G.rotation.x)*.08}
+ else if(!down){G.rotation.y+=vy;G.rotation.x=clamp(G.rotation.x+vx,-1.45,1.45);vx*=.94;vy*=.94;if(auto)G.rotation.y+=dt*.06}
+ const cd=cam.position.clone().normalize(),r=cvs.getBoundingClientRect();
+ pins.forEach(p=>{p.o.getWorldPosition(tmp);if(tmp.clone().normalize().dot(cd)>1/D+.06&&D<2.6){const s=tmp.clone().project(cam);p.d.style.left=((s.x+1)/2*r.width)+'px';p.d.style.top=((1-s.y)/2*r.height)+'px';p.d.style.opacity=1}else p.d.style.opacity=0;
+  p.o.scale.setScalar(clamp((D-1)/1.4,.6,2.4))});
+ pulses.forEach((r,i)=>{const t=((now/1000+i*.41)%1.8)/1.8;r.scale.setScalar((1+t*4.5)*clamp((D-1)/1.4,.6,2.4));r.material.opacity=(1-t)*.85});
+ moons.forEach(m=>{m.p+=dt*m.s;m.o.position.set(Math.cos(m.p)*m.a,0,Math.sin(m.p)*m.a)});dust.rotation.y+=dt*.03;
+ const sw=clamp(D-1,0,1.5);cam.position.x=Math.sin(now/2600)*.04*sw;cam.position.y=Math.cos(now/3300)*.025*sw;cam.lookAt(0,0,0);
+ if(((now/100)|0)!==hudT){hudT=(now/100)|0;const pv=new THREE.Vector3(0,0,1).applyQuaternion(G.quaternion.clone().invert());let hl=Math.atan2(pv.z,-pv.x)*R2D-180;if(hl<-180)hl+=360;
+  $('#hAlt').textContent=Math.round((D-1)*3389.5).toLocaleString('en')+' km';$('#hLat').textContent=(Math.asin(clamp(pv.y,-1,1))*R2D).toFixed(2)+'°';$('#hLon').textContent=hl.toFixed(2)+'°'}
+ ren.render(scene,cam)}
+/* ---------- page FX ---------- */
+(()=>{const c=$('#bg'),x=c.getContext('2d'),dpr=Math.min(devicePixelRatio,2);let w,h,S=[],sh=[],mx=0,my=0,nx=2;
+ const rs=()=>{w=c.width=innerWidth*dpr;h=c.height=innerHeight*dpr;S=Array.from({length:Math.round(innerWidth*innerHeight/5500)},()=>({x:Math.random()*w,y:Math.random()*h,z:Math.random()*.9+.1,p:Math.random()*6}))};rs();addEventListener('resize',rs);
+ addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+ (function f(t){t/=1000;x.clearRect(0,0,w,h);
+  for(const s of S){const px=((s.x+mx*60*s.z*dpr+t*5*s.z*dpr)%w+w)%w,py=((s.y+my*40*s.z*dpr)%h+h)%h;x.globalAlpha=(.35+.65*Math.abs(Math.sin(t*s.z*2+s.p)))*s.z;x.fillStyle=s.z>.8?'#ffd9b8':'#cfe3ff';x.beginPath();x.arc(px,py,s.z*1.3*dpr,0,6.3);x.fill()}
+  if(t>nx){sh.push({x:Math.random()*w,y:Math.random()*h*.5,l:0});nx=t+2+Math.random()*4}
+  sh=sh.filter(s=>s.l<1);for(const s of sh){s.l+=.025;const a=s.x+s.l*200*dpr,b=s.y+s.l*92*dpr,g=x.createLinearGradient(a,b,s.x+s.l*260*dpr,s.y+s.l*120*dpr);g.addColorStop(0,'#fff0');g.addColorStop(1,'#fff');x.globalAlpha=1-s.l;x.strokeStyle=g;x.lineWidth=1.6*dpr;x.beginPath();x.moveTo(a,b);x.lineTo(s.x+s.l*260*dpr,s.y+s.l*120*dpr);x.stroke()}
+  requestAnimationFrame(f)})(0)})();
+const cu=$('#curs');if(matchMedia('(pointer:fine)').matches)addEventListener('pointermove',e=>{cu.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;cu.classList.add('on')});
+addEventListener('scroll',()=>{$('#prog').style.transform=`scaleX(${clamp(scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight),0,1)})`},{passive:true});
+{const s=MIS.map(m=>m.n.toUpperCase()+' · '+m.d.slice(0,4)).join('   ◆   ');$('#tk').textContent=s+'   ◆   '+s+'   ◆   '}
+function countUp(e){const b=e.querySelector('b'),n=+e.dataset.n,d=+(e.dataset.dec||0),sf=e.dataset.suf||'',t0=performance.now();(function f(t){const k=clamp((t-t0)/1600,0,1);b.textContent=(n*(1-Math.pow(1-k,3))).toFixed(d)+sf;if(k<1)requestAnimationFrame(f)})(t0)}
+document.querySelectorAll('.pg h2,.pg>p,.src .card,.note,.stat').forEach(e=>e.classList.add('rv'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=e.target;t.classList.add('in');io.unobserve(t);if(t.dataset.n)countUp(t);setTimeout(()=>t.style.setProperty('--d','0s'),1500)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+setTimeout(()=>document.body.classList.add('ready'),9000);
+/* background audio (put the mp3 next to index.html) */
+const bgAudio=new Audio('audiopapkin-ambient-soundscapes-001-space-atmosphere-303246.mp3'),aBtn=$('#audio-toggle');bgAudio.loop=true;bgAudio.volume=.5;
+const setA=on=>{aBtn.setAttribute('aria-pressed',on);aBtn.classList.toggle('on',on);aBtn.lastElementChild.textContent=on?'الصوت: شغال':'الصوت: مكتوم'};
+bgAudio.play().then(()=>setA(true)).catch(()=>{const go=()=>{bgAudio.play().then(()=>setA(true)).catch(()=>{});removeEventListener('pointerdown',go);removeEventListener('keydown',go)};addEventListener('pointerdown',go);addEventListener('keydown',go)});
+aBtn.onclick=()=>{if(bgAudio.paused)bgAudio.play().then(()=>setA(true)).catch(()=>{});else{bgAudio.pause();setA(false)}};
+resize();requestAnimationFrame(frame);showLayer('viking');gallery(MIS.find(m=>m.n==='Perseverance'));
+</script>
+</body>
+</html>
